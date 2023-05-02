@@ -35,7 +35,7 @@ Per comodità  installare un ambiente desktop e un server vnc per utilizzare e c
  ### Configurazione di VirtualBox
  1. Installare l'ultima versione di VirtualBox 
  2. Connettersi con VNC all'host
- 3. Scaricare ubuntu 18.04 LTS server e procedere alla normale installazione chiamdno la VM HON1
+ 3. Scaricare ubuntu 18.04 LTS server e procedere alla normale installazione chiamano la VM HON1
  4. Dedicare almeno 4Gb Ram/ 2 Cpu
  5. Sulle impostazioni della VM di Virtualbox : System > Abilitare Enable I/O APIC
  6. Sull'host: sudo mkdir /ctrl   e   sudo mkdir /ctrl1 
