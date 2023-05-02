@@ -93,7 +93,7 @@ Sull'host:
  4. installare la libreria pip prometheus-client 
        pip install prometheus-client
   5. Copiare il file prometheusClient.py in /usr/local/sbin
-  6. impostare una password per prometheus
+  6. impostare una password per prometheus (se necessario)
   7. settare un crontab per avviarlo ad ogni riavvio:
         @reboot nohup python prometheusClient.py > /dev/null 2>&1 &
  (di default lo script raccoglie le metriche ogni 30 secondi)
