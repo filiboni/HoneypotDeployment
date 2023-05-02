@@ -75,7 +75,7 @@ Funzionamento: Lo script sulla host machine mette in pausa la vm ogni volta che 
 ogni volta che un evento soprastante avviene, lo script notifica tramite un messaggio sul canale telgram.
 Quindi per operare sulla macchina da ora in poi eseguire /1off e solo alla fine inviare /1on
 ### Integrazione con Promethes di Dionaea
-L'integrazione tra l'honeypot e Prometheus avviene tramite un [Promethes client](https://github.com/prometheus/client_python) scritto in python sulla macchina host, che riceve i log in fomato json dall'honeypot nella cartella condivisa ctrl1, lo script non solo monitora le varie conessioni e tipi di protocollo, ma anche le performacne della macchina virtuale estraendo le statistiche da virtualbox, quindi monitora:
+L'integrazione tra l'honeypot e Prometheus avviene tramite un [Promethes client](https://github.com/prometheus/client_python) scritto in python sulla macchina host, che riceve i log in fomato json dall'honeypot nella cartella condivisa ctrl1, lo script non solo monitora le varie conessioni e tipi di protocollo, ma anche le performance della macchina virtuale estraendo le statistiche da virtualbox, quindi monitora:
 
 - Cpu usage della VM (gauge)
 - Ram usage della VM
