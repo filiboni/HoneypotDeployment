@@ -46,7 +46,7 @@ Per comodità  installare un ambiente desktop e un server vnc per utilizzare e c
  11. Spegnere la VM
  #### Configurazione  della nat VirtualNetwork
  sulla home gui di virtualbox 
- 1. Hon1 > Settings > Network > Adapter 1 NAT > advanced : Port forwarding impostare regole di forwarding desiderate (da ip locale host) a Guest ip 10.0.2.15
+ 1. Hon1 > Settings > Network > Adapter 1 NAT > advanced : Port forwarding impostare regole di forwarding desiderate (da ip locale dell host) a Guest ip 10.0.2.15
  2. Per permettere il mantenimento degli ip sorgente eseguire il comando VBoxManage modifyvm HON1 --nataliasmode1 proxyonly dal terminale dell'host
  3. Configurare nella VM la scheda di rete di virtualbox  assegnando ip 10.0.2.15 
 
