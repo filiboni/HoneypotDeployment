@@ -1,28 +1,28 @@
 #!/bin/bash
 
-# Crea il file JSON
-output_file="/media/sf_ctrl1/loginForm.json"
-echo "[" > "$output_file"
+o="/media/sf_ctrl1/loginForm.json"
 
-# Tail del file
-tail -f "/opt/dionaea/var/log/dionaea/dionaea.log" | while IFS= read -r line
+tail -f "/opt/dionaea/var/log/dionaea/dionaea.log" | while IFS= read -r l
 do
-    if [[ $line == *"GET /?uname"* ]]; then
-        # Estrapola i dati necessari dal log
-        timestamp=$(echo "$line" | grep -oP '\[\K[^]]+')
-        uname=$(echo "$line" | grep -oP 'uname=\K[^&]+')
-        psw=$(echo "$line" | grep -oP 'psw=\K[^&]+')
+    if [[ $l == *"GET /?uname"* ]]; then
+        t=$(echo "$l" | grep -oP '\[\K[^]]+')
+        u=$(echo "$l" | grep -oP 'uname=\K[^&]+')
+        p=$(echo "$l" | grep -oP 'psw=\K[^&]+')
+#check if file exists
+        if [[ -f "$o" ]]; then
+            truncate -s-2 "$o"
+            echo "," >> "$o"
+        else
+            echo "[" > "$o"
+        fi
 
-        # Salva i dati nel JSON
-        echo "  {" >> "$output_file"
-        echo "    \"timestamp\": \"$timestamp\"," >> "$output_file"
-        echo "    \"username\": \"$uname\"," >> "$output_file"
-        echo "    \"password\": \"$psw\"" >> "$output_file"
-        echo "  }," >> "$output_file"
+        echo "  {" >> "$o"
+        echo "    \"timestamp\": \"$t\"," >> "$o"
+        echo "    \"username\": \"$u\"," >> "$o"
+        echo "    \"password\": \"$p\"" >> "$o"
+        echo "  }" >> "$o"
+        echo "]" >> "$o"
     fi
 done
 
-# chiudi il file JSON
-truncate -s-2 "$output_file"
-echo "]" >> "$output_file"
 
