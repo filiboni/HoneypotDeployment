@@ -50,7 +50,7 @@ Per comodità  installare un ambiente desktop e un server vnc per utilizzare e c
  2. Per permettere il mantenimento degli ip sorgente dei pacchetti anche dopo la traduzione NAT eseguire il comando VBoxManage modifyvm HON1 --nataliasmode1 proxyonly dal terminale dell'host
  3. Configurare nella VM la scheda di rete di virtualbox  assegnando ip 10.0.2.15 
 
-
+Successivamente permettere il traffico sulla porta 22 dellhost sa UFW e su entrambe le macchine aprire le porte del punto 1. Succssivamente abilitare UFW 
 ## Monitoring del Client
 ### Sistema automatico di confinamento degli attacchi
 Nell'eventulità remota che un attaccante riesca a uscire dall'ambiente virtualizzato da Dioneae honeypot abbiamo prodotto qusto sistema che ad ogni comando sudo mette in pausa la vm dall'host. Il funzionamento si basa su uno scambio di messaggi tra host e client tramite la directory condivisa.
