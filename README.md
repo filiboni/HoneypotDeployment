@@ -10,7 +10,7 @@ Una volta ottenuti chat id e Bot token inserirli nelle variabili predisposte di 
 che si occupa di solo di interfacciarsi con l'api di telegram successivamente copiarlo in /usr/bin  e poi chmod +x
 ## Monioting dell'host
 ### Rilevare gli accessi ssh
-Per **rilevare gli accessi ssh** effettuati con successo sulla macchina host ( che non utilizzera la porta 22 poichè utilizzata di dionaea) utilizzare lo script di notifica "login-notify.sh" da copiare nella directory /etc/profile.d 
+Per **rilevare gli accessi ssh** effettuati con successo sulla macchina host utilizzare lo script di notifica "login-notify.sh" da copiare nella directory /etc/profile.d 
 la directory contiene gli script eseguiti ad ogni login ssh con successo, se la directory non esiste, sul server ssh installato non è configurata, quindi configurarla oppure utilizzare "login-notify1.sh" che si basa sui log di sistema.
 In questo caso copiare login-notify1 su /usr/sbin e proteggere lo script, come root effettuare chmod 700. Successivamente aggiungere lo script a crontab (solo nel caso di login-notify1.sh) : 
 
